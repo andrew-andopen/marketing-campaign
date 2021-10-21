@@ -37,6 +37,7 @@ export const StyledMobileButton = styled(StyledButton)`
 
   @media only screen and (max-width: 768px) {
     display: block;
+    font-size:24px;
     margin: 85vh auto;
     width: 80%;
     background: #faf7f3;
