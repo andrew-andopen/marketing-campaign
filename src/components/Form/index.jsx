@@ -60,16 +60,22 @@ export const StyledField = styled.div`
   }
 `;
 
-const Form = ({ handleFormSubmit }) => {
+const Form = ({ handleFormSubmit, handleSetFirstName}) => {
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
+    getValues,
   } = useForm();
+
 
   const onSubmit = async (data) => {
     handleFormSubmit(true);
+
+    const name = getValues("Firstname")
+    handleSetFirstName(name)
+
 
     fetch("https://usebasin.com/f/500f6aa02e4c", {
       method: "POST",

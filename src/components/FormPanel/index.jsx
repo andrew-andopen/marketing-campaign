@@ -88,6 +88,13 @@ const FormPanel = ({ data, handleShowFormPanel, state }) => {
     setSubmitForm(value);
   };
 
+  const [firstName, setFirstName] = useState(null);
+  const handleSetFirstName = (value) => {
+    setFirstName(value);
+  };
+
+  
+
   return (
     <StyledFormPanel $state={state}>
       {!submitForm && (
@@ -101,14 +108,14 @@ const FormPanel = ({ data, handleShowFormPanel, state }) => {
         <StyledContentWrapper>
           <StyledH1 $form>{data[6].title}</StyledH1>
           <StyledFormSub>{data[6].body}</StyledFormSub>
-          <Form handleFormSubmit={handleFormSubmit} />
+          <Form handleFormSubmit={handleFormSubmit} handleSetFirstName={handleSetFirstName}/>
         </StyledContentWrapper>
       )}
 
       {submitForm && (
         <StyledContentWrapper $success>
           <StyledLogo src={Logo} />
-          <StyledH1>{data[7].title}</StyledH1>
+          <StyledH1>{`${data[7].title} ${firstName}`}</StyledH1>
           <StyledP>{data[7].body}</StyledP>
           <StyledLink href="https://andopen.co/" target="blank">
             Visit &Open
