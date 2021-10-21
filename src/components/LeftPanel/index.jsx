@@ -40,6 +40,7 @@ export const StyledMobileButton = styled(StyledButton)`
     width: 80%;
     background: #faf7f3;
     color: #141414;
+    z-index:2;
   }
 `;
 
