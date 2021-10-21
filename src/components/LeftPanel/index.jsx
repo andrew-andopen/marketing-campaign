@@ -24,6 +24,7 @@ export const StyledImage = styled.img`
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
+  z-index:-1;
 `;
 
 export const StyledMobileButton = styled(StyledButton)`
@@ -40,7 +41,6 @@ export const StyledMobileButton = styled(StyledButton)`
     width: 80%;
     background: #faf7f3;
     color: #141414;
-    z-index:2;
   }
 `;
 
