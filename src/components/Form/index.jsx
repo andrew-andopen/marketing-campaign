@@ -27,9 +27,13 @@ export const StyledInput = styled.input`
   margin-left: ${({ $halfRight }) => ($halfRight ? 2 + "%" : 0)};
   border: 0;
   border-bottom: 1px solid #141414;
-  font-size: calc(0.5vw + 1vh + 1vmin);
+  font-size: 24px;
   outline: none;
   -webkit-border-radius: 0;
+
+  @media only screen and (max-width: 1440px) {
+    font-size: calc(0.5vw + 1vh + 1vmin);
+  }
 
   @media only screen and (max-width: 500px) {
     font-size: 16px;
