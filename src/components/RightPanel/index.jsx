@@ -17,12 +17,12 @@ export const StyledPanel = styled.section`
   width: 50vw;
   margin-left: 50vw;
   height: 300vh;
-  background: red;
+  background: #efeae1;
   padding: 8rem 8rem;
   position: relative;
 
-  @media only screen and (max-width: 1080px) {
-    padding: 3rem 2rem;
+  @media only screen and (max-width: 1200px) {
+    padding: 3rem 3rem;
   }
 
   @media only screen and (max-width: 768px) {
@@ -85,8 +85,8 @@ export const StyledFixed = styled.div`
   padding-right: 8rem;
   transition: opacity 0.5s;
 
-  @media only screen and (max-width: 1080px) {
-    padding-right: 2rem;
+  @media only screen and (max-width: 1200px) {
+    padding-right: 3rem;
   }
 
   @media only screen and (max-width: 500px) {
