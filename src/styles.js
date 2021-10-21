@@ -80,7 +80,7 @@ export const StyledButton = styled.button`
     transform: scale(1.02);
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 768px) {
     display: ${({ $formRelease }) => ($formRelease ? "none" : "block")};
   }
 `;
