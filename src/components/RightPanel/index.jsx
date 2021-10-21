@@ -17,7 +17,7 @@ export const StyledPanel = styled.section`
   width: 50vw;
   margin-left: 50vw;
   height: 300vh;
-  background: #faf7f3;
+  background: red;
   padding: 8rem 8rem;
   position: relative;
 
