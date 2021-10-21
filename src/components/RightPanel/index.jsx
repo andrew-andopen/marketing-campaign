@@ -5,7 +5,7 @@ import styled, { keyframes } from "styled-components";
 import Logo from "../../images/ao_logo.svg";
 import Arrow from "../../images/dropdown_arrow.png";
 
-import { StyledH1, StyledP, StyledSmallP, StyledButton } from "../../styles";
+import { StyledH1, StyledP, StyledSmallP, StyledButton, OpacityFade } from "../../styles";
 
 export const StyledPanel = styled.section`
   width: 50vw;
@@ -29,6 +29,8 @@ export const StyledPanel = styled.section`
 export const StyledLogo = styled.img`
   max-width: 140px;
   margin-bottom: 5rem;
+
+  ${OpacityFade}
 
   @media only screen and (max-width: 500px) {
     max-width: 80px;
@@ -62,6 +64,7 @@ export const Indicator = styled.div`
   animation-name: ${scrollAnimation};
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
+
 
   @media only screen and (max-width: 500px) {
     right: 3rem;

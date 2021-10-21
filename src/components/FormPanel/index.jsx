@@ -20,6 +20,9 @@ export const StyledFormPanel = styled(StyledPanel)`
   padding: 2rem;
   z-index: 10;
   transition: right 1000ms;
+  -webkit-transition: right 1000ms;
+  -moz-transition: right 1000ms;
+  -o-transition: right 1000ms;
 
   @media only screen and (max-width: 700px) {
     min-width: 100vw;

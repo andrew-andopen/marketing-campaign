@@ -1,5 +1,12 @@
 import styled, { css, createGlobalStyle } from "styled-components";
 
+export const OpacityFade = css`
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+`;
+
 export const GlobalStyle = createGlobalStyle`
 html, body {
   overflow-x: hidden;
@@ -24,6 +31,7 @@ export const StyledH1 = styled.h1`
   font-size: 4vw;
   line-height: 1;
   margin-bottom: ${({ $form }) => ($form ? "1.2rem" : "3rem")};
+  ${OpacityFade}
 
   @media only screen and (max-width: 1440px) {
     font-size: 3.2rem;
@@ -43,6 +51,7 @@ export const StyledP = styled.p`
   font-family: Leitura;
   font-size: 1.5rem;
   line-height: 2rem;
+  ${OpacityFade}
 
   @media only screen and (max-width: 500px) {
     font-size: 16px;

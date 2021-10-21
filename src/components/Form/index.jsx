@@ -29,6 +29,7 @@ export const StyledInput = styled.input`
   border-bottom: 1px solid #141414;
   font-size: calc(0.5vw + 1vh + 1vmin);
   outline: none;
+  -webkit-border-radius: 0;
 
   @media only screen and (max-width: 500px) {
     font-size: 16px;
