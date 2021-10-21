@@ -20,7 +20,7 @@ export const StyledFormPanel = styled(StyledPanel)`
   padding: 2rem;
   z-index: 10;
   transition: right 1000ms;
-  
+
   -webkit-transition: right 1000ms;
   -moz-transition: right 1000ms;
   -o-transition: right 1000ms;
@@ -68,7 +68,7 @@ export const StyledContentWrapper = styled.div`
   }
 
   @media only screen and (max-width: 500px) {
-    padding: ${({ $success }) => ($success ? "8rem 4rem" : "0rem 0rem")};
+    padding: ${({ $success }) => ($success ? "2rem 2rem" : "0rem 0rem")};
   }
 `;
 
