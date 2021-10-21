@@ -5,7 +5,13 @@ import styled, { keyframes } from "styled-components";
 import Logo from "../../images/ao_logo.svg";
 import Arrow from "../../images/dropdown_arrow.png";
 
-import { StyledH1, StyledP, StyledSmallP, StyledButton, OpacityFade } from "../../styles";
+import {
+  StyledH1,
+  StyledP,
+  StyledSmallP,
+  StyledButton,
+  OpacityFade,
+} from "../../styles";
 
 export const StyledPanel = styled.section`
   width: 50vw;
@@ -15,7 +21,7 @@ export const StyledPanel = styled.section`
   padding: 8rem 8rem;
   position: relative;
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 768px) {
     margin-left: 0;
     width: 100vw;
     height: 300vh;
@@ -64,7 +70,6 @@ export const Indicator = styled.div`
   animation-name: ${scrollAnimation};
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
-
 
   @media only screen and (max-width: 500px) {
     right: 3rem;

@@ -11,7 +11,7 @@ export const StyledPanel = styled.section`
   transition: background-color 0.5s linear;
   position: fixed;
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 768px) {
     width: 100vw;
   }
 `;
@@ -34,7 +34,7 @@ export const StyledMobileButton = styled(StyledButton)`
     color: #fff;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 768px) {
     display: block;
     margin: 85vh auto;
     width: 80%;
