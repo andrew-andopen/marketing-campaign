@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
@@ -60,7 +62,7 @@ export const StyledField = styled.div`
   }
 `;
 
-const Form = ({ handleFormSubmit, handleSetFirstName}) => {
+const Form = ({ handleFormSubmit, handleSetFirstName }) => {
   const {
     register,
     formState: { errors },
@@ -69,13 +71,11 @@ const Form = ({ handleFormSubmit, handleSetFirstName}) => {
     getValues,
   } = useForm();
 
-
   const onSubmit = async (data) => {
     handleFormSubmit(true);
 
-    const name = getValues("Firstname")
-    handleSetFirstName(name)
-
+    const name = getValues("Firstname");
+    handleSetFirstName(name);
 
     fetch("https://usebasin.com/f/500f6aa02e4c", {
       method: "POST",
@@ -144,7 +144,7 @@ const Form = ({ handleFormSubmit, handleSetFirstName}) => {
         </StyledField>
 
         <StyledField>
-          <label>
+          <label className="label">
             <input
               placeholder="Company name"
               type="checkbox"
