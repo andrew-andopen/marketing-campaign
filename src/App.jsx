@@ -75,7 +75,7 @@ const data = [
       <div>
         Near or far, 100 or 10,000, our intelligent shipping logistics and{" "}
         <span className="emphasised">powerful SaaS platform</span> ships gifts
-        anywhere in the world — fast."
+        anywhere in the world — fast.
       </div>
     ),
     image: Image_4,
