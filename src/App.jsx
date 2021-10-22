@@ -197,7 +197,6 @@ export default function App() {
         percentage > 0.56 && fifthFunction();
         percentage > 0.7 && sixthFunction();
         percentage > 0.84 ? setMobileBottom(true) : setMobileBottom(false);
-        // pixels >= windowHeight * 2.8 && sixthFunction();
       }
     };
   }, []);
