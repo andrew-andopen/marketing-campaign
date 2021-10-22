@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
@@ -77,7 +76,7 @@ const Form = ({ handleFormSubmit, handleSetFirstName }) => {
     const name = getValues("Firstname");
     handleSetFirstName(name);
 
-    fetch("https://usebasin.com/f/500f6aa02e4c", {
+    fetch("https://usebasin.com/f/1251383d5fd7", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
