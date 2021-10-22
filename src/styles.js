@@ -14,7 +14,7 @@ html, body {
 `;
 
 export const Overflow = styled.div`
-  height: 200vh;
+  height: 250vh;
 
   @media only screen and (max-width: 768px) {
     height: 400vh;

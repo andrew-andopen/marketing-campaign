@@ -2,10 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import { Transition } from "react-transition-group";
 
 import "./base.css";
+import "./uniqueClasses.css";
 import "./styles.js";
 
 import { GlobalFonts } from "./fonts/fonts";
-import { AppContainer, GlobalStyle, Overflow } from "./styles";
+import {
+  AppContainer,
+  GlobalStyle,
+  Overflow,
+  StyledPEmphasised,
+} from "./styles";
 
 import LeftPanel from "./components/LeftPanel";
 import RightPanel from "./components/RightPanel";
@@ -22,11 +28,19 @@ const data = [
   {
     title: (
       <div>
-        Open up
+        &Open up
         <br /> better gifting
       </div>
     ),
-    body: "A tale as old as time, the holiday season calls upon gifting to deliver feelings of connectedness, sincere appreciation and care.  And yet in a corporate setting, this can feel especially underwhelming... ",
+    body: (
+      <div>
+        A tale as old as time, the holiday season calls upon gifting to{" "}
+        <span className="emphasised">deliver feelings of connectedness</span>,
+        sincere appreciation and care.
+        <br /> And yet in a corporate setting, this can feel especially
+        underwhelming...
+      </div>
+    ),
     image: Image_1,
     color: "#42594e",
   },
@@ -38,25 +52,49 @@ const data = [
         <br /> something great
       </div>
     ),
-    body: "Something that lasts.Something truly memorable.",
+    body: (
+      <div>
+        Something that lasts.{" "}
+        <span className="emphasised">Something truly memorable.</span>
+      </div>
+    ),
     image: Image_2,
     color: "#42594e",
   },
   {
-    title: "We make it simple",
-    body: "Finding just the right something for customers, employees, partners and clients. After our team discovers and designs the perfect gifts, simply select, dedicate and send them on their merry way.",
+    title: <div>We make it simple</div>,
+    body: (
+      <div>
+        Finding just the right something for customers, employees, partners and
+        clients. After our team discovers and designs the perfect gifts, simply
+        <span className="emphasised">select, dedicate and send</span> them on
+        their merry way.
+      </div>
+    ),
     image: Image_3,
     color: "#42584d",
   },
   {
     title: "We make it global",
-    body: "Near or far, 100 or 10,000, our intelligent shipping logistics and powerful SaaS platform ships gifts anywhere in the world — fast. ",
+    body: (
+      <div>
+        Near or far, 100 or 10,000, our intelligent shipping logistics and{" "}
+        <span className="emphasised">powerful SaaS platform</span> ships gifts
+        anywhere in the world — fast."
+      </div>
+    ),
     image: Image_4,
     color: "#3a4e44",
   },
   {
     title: "And we make it especially thoughtful",
-    body: "No more cheap merch. Whether it’s a sustainably-made object, charitable donation, slab of chocolate or digital subscription, we ensure the best gifts are delivered to the right people.",
+    body: (
+      <div>
+        <span className="emphasised">No more cheap merch.</span> Whether it’s a
+        sustainably-made object*, charitable donation or digital subscription,
+        we ensure the best gifts are delivered to the right people.
+      </div>
+    ),
     image: Image_5,
     color: "#32433a",
   },
@@ -68,7 +106,12 @@ const data = [
         <br /> into mass gifting
       </div>
     ),
-    body: "And you’re left with loyal brand advocates (and very happy people).",
+    body: (
+      <div>
+        And you’re left with loyal brand advocates{" "}
+        <span className="emphasised">(and very happy people).</span>
+      </div>
+    ),
     image: Image_6,
     color: "#293831",
   },
