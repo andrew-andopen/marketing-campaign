@@ -32,6 +32,7 @@ const data = [
         A tale as old as time, the holiday season calls upon gifting to{" "}
         <span className="emphasised">deliver feelings of connectedness</span>,
         sincere appreciation and care.
+        <br />
         <br /> And yet in a corporate setting, this can feel especially
         underwhelming...
       </div>
@@ -62,7 +63,7 @@ const data = [
       <div>
         Finding just the right something for customers, employees, partners and
         clients. After our team discovers and designs the perfect gifts, simply
-        <span className="emphasised">select, dedicate and send</span> them on
+        <span className="emphasised"> select, dedicate and send</span> them on
         their merry way.
       </div>
     ),
