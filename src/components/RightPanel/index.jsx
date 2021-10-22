@@ -17,7 +17,7 @@ export const StyledPanel = styled.section`
   width: 50vw;
   margin-left: 50vw;
   height: 300vh;
-  background: #efeae1;
+  background: #faf7f3;
   padding: 8rem 8rem;
   position: relative;
 
@@ -104,8 +104,6 @@ const RightPanel = ({
   handleShowFormPanel,
   mobileBottom,
 }) => {
-  console.log(mobileBottom);
-
   return (
     <StyledPanel>
       <StyledFixed>

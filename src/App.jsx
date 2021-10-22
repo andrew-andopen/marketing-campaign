@@ -134,35 +134,32 @@ export default function App() {
 
   useEffect(() => {
     window.onscroll = () => {
-      const pixels = window.pageYOffset;
       const windowHeight = window.innerHeight;
       const windowWidth = window.innerWidth;
+
+      const pixels = window.pageYOffset;
       const pageHeight = BodyTag.current.getBoundingClientRect().height;
 
-      const total = pixels + windowHeight;
+      const totalScrollableDistance = pageHeight - windowHeight;
+      const percentage = pixels / totalScrollableDistance;
 
-      if (windowWidth < 768) {
-        pixels < 10 && firstFunction();
-        pixels > 10 && secondFunction();
-        pixels >= pageHeight / 6 && thirdFunction();
-        pixels >= pageHeight / 5 && fourthFunction();
-        // pixels >= windowHeight * 3 && fifthFunction();
-        pixels >= pageHeight / 4 && fifthFunction();
-        pixels >= pageHeight / 3 && sixthFunction();
-        pixels >= pageHeight / 1.5
-          ? setMobileBottom(true)
-          : setMobileBottom(false);
-        // pixels >= windowHeight * 2.8 && sixthFunction();
-      } else {
+      if (windowWidth > 768) {
         setMobileBottom(false);
-        pixels < 50 && firstFunction();
-        pixels > 50 && secondFunction();
-        pixels >= pageHeight - windowHeight - 100 / 4.2 && thirdFunction();
-        pixels >= pageHeight - windowHeight - 200 && fourthFunction();
-        // pixels >= windowHeight * 3 && fifthFunction();
-        pixels >= pageHeight - windowHeight - 300 && fifthFunction();
-        // pixels >= windowHeight * 2.8 && sixthFunction();
+        percentage === 0 && firstFunction();
+        percentage > 0.2 && secondFunction();
+        percentage > 0.4 && thirdFunction();
+        percentage > 0.6 && fourthFunction();
+        percentage > 0.8 && fifthFunction();
         pixels >= pageHeight - windowHeight && sixthFunction();
+      } else {
+        percentage === 0 && firstFunction();
+        percentage > 0.14 && secondFunction();
+        percentage > 0.28 && thirdFunction();
+        percentage > 0.42 && fourthFunction();
+        percentage > 0.56 && fifthFunction();
+        percentage > 0.7 && sixthFunction();
+        percentage > 0.84 ? setMobileBottom(true) : setMobileBottom(false);
+        // pixels >= windowHeight * 2.8 && sixthFunction();
       }
     };
   }, []);
