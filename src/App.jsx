@@ -6,12 +6,7 @@ import "./uniqueClasses.css";
 import "./styles.js";
 
 import { GlobalFonts } from "./fonts/fonts";
-import {
-  AppContainer,
-  GlobalStyle,
-  Overflow,
-  StyledPEmphasised,
-} from "./styles";
+import { AppContainer, GlobalStyle, Overflow } from "./styles";
 
 import LeftPanel from "./components/LeftPanel";
 import RightPanel from "./components/RightPanel";
