@@ -38,7 +38,7 @@ export const StyledPanel = styled.section`
 
 export const StyledLogo = styled.img`
 
- filter: ${({className}) => (className === 'white' ? 'invert(1) brightness(2)' : null)};
+ filter: ${({$color}) => ($color === 'white' && 'invert(1) brightness(2)')};
 
   max-width: 140px;
   margin-bottom: 5rem;
@@ -77,7 +77,7 @@ export const Indicator = styled.div`
   animation-name: ${scrollAnimation};
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
-  opacity: ${({$className}) => ($className === 'hide' ? 0 : 1)};
+  opacity: ${({$visibility}) => ($visibility === 'hide' ? 0 : 1)};
 
   @media only screen and (max-width: 500px) {
     right: 3rem;
@@ -114,12 +114,12 @@ const RightPanel = ({
         <StyledRelative>
           <StyledLogo
             src={Logo}
-            className={`${mobileBottom ? "white" : null}`}
+            $color={`${mobileBottom && "white"}`}
           />
-          <StyledH1 $className={`${mobileBottom ? "hide" : null}`}>
+          <StyledH1 $visibility={`${mobileBottom && "hide"}`}>
             {content.title}
           </StyledH1>
-          <StyledP $className={`${mobileBottom ? "hide" : null}`}>
+          <StyledP $visibility={`${mobileBottom && "hide"}`}>
             {content.body}
           </StyledP>
 
@@ -134,7 +134,7 @@ const RightPanel = ({
         </StyledRelative>
       </StyledFixed>
       {imageNumber === 5 ? null : (
-        <Indicator className={`${mobileBottom ? "hide" : "display"}`}>
+        <Indicator $visibility={`${mobileBottom && "hide"}`}>
           <StyledSmallP>Scroll to read</StyledSmallP>
           <StyledArrow src={Arrow} />
         </Indicator>
