@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { Transition } from "react-transition-group";
 
 import "./base.css";
-// import "./uniqueClasses.css";
 import "./styles.js";
 
 import { GlobalFonts } from "./fonts/fonts";
@@ -191,6 +190,8 @@ export default function App() {
 
 
   }, []);
+
+
 
 
 
