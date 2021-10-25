@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { Transition } from "react-transition-group";
 
 import "./base.css";
-import "./uniqueClasses.css";
+// import "./uniqueClasses.css";
 import "./styles.js";
 
 import { GlobalFonts } from "./fonts/fonts";
-import { AppContainer, GlobalStyle, Overflow } from "./styles";
+import { AppContainer, GlobalStyle, Overflow, StyledPEmphasised } from "./styles";
 
 import LeftPanel from "./components/LeftPanel";
 import RightPanel from "./components/RightPanel";
@@ -30,7 +30,7 @@ const data = [
     body: (
       <div>
         A tale as old as time, the holiday season calls upon gifting to{" "}
-        <span className="emphasised">deliver feelings of connectedness</span>,
+        <StyledPEmphasised>deliver feelings of connectedness</StyledPEmphasised>,
         sincere appreciation and care.
         <br />
         <br /> And yet in a corporate setting, this can feel especially
@@ -51,7 +51,7 @@ const data = [
     body: (
       <div>
         Something that lasts.{" "}
-        <span className="emphasised">Something truly memorable.</span>
+        <StyledPEmphasised>Something truly memorable.</StyledPEmphasised>
       </div>
     ),
     image: Image_2,
@@ -63,7 +63,7 @@ const data = [
       <div>
         Finding just the right something for customers, employees, partners and
         clients. After our team discovers and designs the perfect gifts, simply
-        <span className="emphasised"> select, dedicate and send</span> them on
+        <StyledPEmphasised> select, dedicate and send</StyledPEmphasised> them on
         their merry way.
       </div>
     ),
@@ -75,7 +75,7 @@ const data = [
     body: (
       <div>
         Near or far, 100 or 10,000, our intelligent shipping logistics and{" "}
-        <span className="emphasised">powerful SaaS platform</span> ships gifts
+        <StyledPEmphasised>powerful SaaS platform</StyledPEmphasised> ships gifts
         anywhere in the world — fast.
       </div>
     ),
@@ -86,7 +86,7 @@ const data = [
     title: "And we make it especially thoughtful",
     body: (
       <div>
-        <span className="emphasised">No more cheap merch.</span> Whether it’s a
+        <StyledPEmphasised>No more cheap merch.</StyledPEmphasised> Whether it’s a
         sustainably-made object*, charitable donation or digital subscription,
         we ensure the best gifts are delivered to the right people.
       </div>
@@ -105,7 +105,7 @@ const data = [
     body: (
       <div>
         And you’re left with loyal brand advocates{" "}
-        <span className="emphasised">(and very happy people).</span>
+        <StyledPEmphasised>(and very happy people).</StyledPEmphasised>
       </div>
     ),
     image: Image_6,
@@ -139,40 +139,15 @@ export default function App() {
     setFormPanel(visibility);
   };
 
-  const firstFunction = () => {
-    setContent(data[0]);
-    setImageNumber(0);
-  };
-
-  const secondFunction = () => {
-    setContent(data[1]);
-    setImageNumber(1);
-  };
-
-  const thirdFunction = () => {
-    setContent(data[2]);
-    setImageNumber(2);
-  };
-
-  const fourthFunction = () => {
-    setContent(data[3]);
-    setImageNumber(3);
-  };
-
-  const fifthFunction = () => {
-    setContent(data[4]);
-    setImageNumber(4);
-  };
-
-  const sixthFunction = () => {
-    setContent(data[5]);
-    setImageNumber(5);
-  };
+  const changeContent = (number) => {
+    setContent(data[number])
+    setImageNumber(number)
+  }
 
   const BodyTag = useRef();
 
   useEffect(() => {
-    window.onscroll = () => {
+    const scrollListener = () => {
       const windowHeight = window.innerHeight;
       const windowWidth = window.innerWidth;
 
@@ -184,29 +159,40 @@ export default function App() {
 
       if (windowWidth > 768) {
         setMobileBottom(false);
-        percentage === 0 && firstFunction();
-        percentage > 0.2 && secondFunction();
-        percentage > 0.4 && thirdFunction();
-        percentage > 0.6 && fourthFunction();
-        percentage > 0.8 && fifthFunction();
-        pixels >= pageHeight - windowHeight && sixthFunction();
+        percentage === 0 && changeContent(0);
+        percentage > 0.2 && changeContent(1);
+        percentage > 0.4 && changeContent(2);
+        percentage > 0.6 && changeContent(3);
+        percentage > 0.8 && changeContent(4);
+        pixels >= pageHeight - windowHeight && changeContent(5);
       } else {
-        percentage === 0 && firstFunction();
-        percentage > 0.14 && secondFunction();
-        percentage > 0.28 && thirdFunction();
-        percentage > 0.42 && fourthFunction();
-        percentage > 0.56 && fifthFunction();
-        percentage > 0.7 && sixthFunction();
+        percentage === 0 && changeContent(0);
+        percentage > 0.14 && changeContent(1);
+        percentage > 0.28 && changeContent(2);
+        percentage > 0.42 && changeContent(3);
+        percentage > 0.56 && changeContent(4);
+        percentage > 0.7 && changeContent(5);
         percentage > 0.84 ? setMobileBottom(true) : setMobileBottom(false);
       }
     };
+
+    const resizeListener = () => {
+      window.innerWidth > 768 && setMobileBottom(false);
+    }
+
+    window.addEventListener('resize', resizeListener);
+    window.addEventListener('scroll', scrollListener);
+
+     
+       return () => {
+         window.removeEventListener('resize', resizeListener);
+         window.removeEventListener('resize', scrollListener);
+      }
+
+
   }, []);
 
-  useEffect(() => {
-    window.onresize = () => {
-      window.innerWidth > 768 && setMobileBottom(false);
-    };
-  });
+
 
   return (
     <Overflow ref={BodyTag}>

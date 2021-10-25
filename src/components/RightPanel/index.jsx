@@ -37,6 +37,9 @@ export const StyledPanel = styled.section`
 `;
 
 export const StyledLogo = styled.img`
+
+ filter: ${({className}) => (className === 'white' ? 'invert(1) brightness(2)' : null)};
+
   max-width: 140px;
   margin-bottom: 5rem;
 
@@ -74,6 +77,7 @@ export const Indicator = styled.div`
   animation-name: ${scrollAnimation};
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
+  opacity: ${({$className}) => ($className === 'hide' ? 0 : 1)};
 
   @media only screen and (max-width: 500px) {
     right: 3rem;
@@ -112,10 +116,10 @@ const RightPanel = ({
             src={Logo}
             className={`${mobileBottom ? "white" : null}`}
           />
-          <StyledH1 className={`${mobileBottom ? "hide" : "display"}`}>
+          <StyledH1 $className={`${mobileBottom ? "hide" : null}`}>
             {content.title}
           </StyledH1>
-          <StyledP className={`${mobileBottom ? "hide" : "display"}`}>
+          <StyledP $className={`${mobileBottom ? "hide" : null}`}>
             {content.body}
           </StyledP>
 

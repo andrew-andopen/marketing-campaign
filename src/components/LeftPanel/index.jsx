@@ -17,6 +17,8 @@ export const StyledPanel = styled.section`
 `;
 
 export const StyledImage = styled.img`
+
+  opacity: ${({$opacity}) => ($opacity === 'display' ? 1 : 0)};
   width: 80%;
   transition: 0.2s linear;
   object-fit: contain;
@@ -45,6 +47,7 @@ export const StyledMobileButton = styled(StyledButton)`
   }
 `;
 
+
 const LeftPanel = ({ data, imageNumber, content, handleShowFormPanel }) => (
   <StyledPanel content={content}>
     {data.map((image, index) => (
@@ -52,7 +55,8 @@ const LeftPanel = ({ data, imageNumber, content, handleShowFormPanel }) => (
         alt=""
         key={index}
         src={image.image}
-        className={imageNumber === index ? "display" : "hide"}
+        $opacity={imageNumber === index ? "display" : "hide"}
+         
       />
     ))}
 
@@ -63,3 +67,5 @@ const LeftPanel = ({ data, imageNumber, content, handleShowFormPanel }) => (
 );
 
 export default LeftPanel;
+
+// $opacity={imageNumber === index ? 1 : 0}

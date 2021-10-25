@@ -55,6 +55,15 @@ export const StyledField = styled.div`
   margin-left: ${({ $halfRight }) => ($halfRight ? 2 + "%" : null)};
   margin-top: 16px;
 
+  & .error {
+    color: rgb(252, 58, 58);
+    font-family: NittiLight;
+  } 
+
+  & .label {
+    font-family: NittiLight;
+  }
+
   @media only screen and (max-width: 500px) {
     width: 100%;
     margin-left: 0;
