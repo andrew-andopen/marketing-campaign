@@ -31,7 +31,7 @@ export const StyledH1 = styled.h1`
   font-size: 4vw;
   line-height: 1;
   margin-bottom: ${({ $form }) => ($form ? "1.2rem" : "3rem")};
-  opacity: ${({$visibility}) => ($visibility === 'hide' ? 0 : 1)};
+  opacity: ${({ $visibility }) => ($visibility === "hide" ? 0 : 1)};
   ${OpacityFade}
 
   @media only screen and (max-width: 1440px) {
@@ -52,7 +52,7 @@ export const StyledP = styled.p`
   font-family: Leitura;
   font-size: 1.5rem;
   line-height: 2rem;
-  opacity: ${({$visibility}) => ($visibility === 'hide' ? 0 : 1)};
+  opacity: ${({ $visibility }) => ($visibility === "hide" ? 0 : 1)};
   ${OpacityFade}
 
   @media only screen and (max-width: 500px) {
@@ -69,7 +69,7 @@ export const StyledSmallP = styled.p`
 
 export const StyledPEmphasised = styled.span`
   font-family: LeituraMedium;
-`
+`;
 
 export const StyledButton = styled.button`
   font-family: NittiMedium;

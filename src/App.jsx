@@ -5,7 +5,12 @@ import "./base.css";
 import "./styles.js";
 
 import { GlobalFonts } from "./fonts/fonts";
-import { AppContainer, GlobalStyle, Overflow, StyledPEmphasised } from "./styles";
+import {
+  AppContainer,
+  GlobalStyle,
+  Overflow,
+  StyledPEmphasised,
+} from "./styles";
 
 import LeftPanel from "./components/LeftPanel";
 import RightPanel from "./components/RightPanel";
@@ -29,15 +34,15 @@ const data = [
     body: (
       <div>
         A tale as old as time, the holiday season calls upon gifting to{" "}
-        <StyledPEmphasised>deliver feelings of connectedness</StyledPEmphasised>,
-        sincere appreciation and care.
+        <StyledPEmphasised>deliver feelings of connectedness</StyledPEmphasised>
+        , sincere appreciation and care.
         <br />
         <br /> And yet in a corporate setting, this can feel especially
         underwhelming...
       </div>
     ),
     image: Image_1,
-    color: "#42594e",
+    color: "#4e7565",
   },
   {
     title: (
@@ -54,7 +59,7 @@ const data = [
       </div>
     ),
     image: Image_2,
-    color: "#42594e",
+    color: "#486759",
   },
   {
     title: <div>We make it simple</div>,
@@ -62,20 +67,20 @@ const data = [
       <div>
         Finding just the right something for customers, employees, partners and
         clients. After our team discovers and designs the perfect gifts, simply
-        <StyledPEmphasised> select, dedicate and send</StyledPEmphasised> them on
-        their merry way.
+        <StyledPEmphasised> select, dedicate and send</StyledPEmphasised> them
+        on their merry way.
       </div>
     ),
     image: Image_3,
-    color: "#42584d",
+    color: "#42594e",
   },
   {
     title: "We make it global",
     body: (
       <div>
         Near or far, 100 or 10,000, our intelligent shipping logistics and{" "}
-        <StyledPEmphasised>powerful SaaS platform</StyledPEmphasised> ships gifts
-        anywhere in the world — fast.
+        <StyledPEmphasised>powerful SaaS platform</StyledPEmphasised> ships
+        gifts anywhere in the world — fast.
       </div>
     ),
     image: Image_4,
@@ -85,8 +90,8 @@ const data = [
     title: "And we make it especially thoughtful",
     body: (
       <div>
-        <StyledPEmphasised>No more cheap merch.</StyledPEmphasised> Whether it’s a
-        sustainably-made object*, charitable donation or digital subscription,
+        <StyledPEmphasised>No more cheap merch.</StyledPEmphasised> Whether it’s
+        a sustainably-made object*, charitable donation or digital subscription,
         we ensure the best gifts are delivered to the right people.
       </div>
     ),
@@ -139,9 +144,9 @@ export default function App() {
   };
 
   const changeContent = (number) => {
-    setContent(data[number])
-    setImageNumber(number)
-  }
+    setContent(data[number]);
+    setImageNumber(number);
+  };
 
   const BodyTag = useRef();
 
@@ -177,23 +182,16 @@ export default function App() {
 
     const resizeListener = () => {
       window.innerWidth > 768 && setMobileBottom(false);
-    }
+    };
 
-    window.addEventListener('resize', resizeListener);
-    window.addEventListener('scroll', scrollListener);
+    window.addEventListener("resize", resizeListener);
+    window.addEventListener("scroll", scrollListener);
 
-     
-       return () => {
-         window.removeEventListener('resize', resizeListener);
-         window.removeEventListener('resize', scrollListener);
-      }
-
-
+    return () => {
+      window.removeEventListener("resize", resizeListener);
+      window.removeEventListener("resize", scrollListener);
+    };
   }, []);
-
-
-
-
 
   return (
     <Overflow ref={BodyTag}>

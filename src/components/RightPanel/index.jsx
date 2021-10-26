@@ -16,29 +16,19 @@ import {
 export const StyledPanel = styled.section`
   width: 50vw;
   margin-left: 50vw;
-  height: 300vh;
+  height: 250vh;
   background: #faf7f3;
-  padding: 8rem 8rem;
   position: relative;
-
-  @media only screen and (max-width: 1200px) {
-    padding: 3rem 3rem;
-  }
 
   @media only screen and (max-width: 768px) {
     margin-left: 0;
     width: 100vw;
     height: 300vh;
   }
-
-  @media only screen and (max-width: 500px) {
-    padding: 3rem;
-  }
 `;
 
 export const StyledLogo = styled.img`
-
- filter: ${({$color}) => ($color === 'white' && 'invert(1) brightness(2)')};
+  filter: ${({ $color }) => $color === "white" && "invert(1) brightness(2)"};
 
   max-width: 140px;
   margin-bottom: 5rem;
@@ -77,7 +67,7 @@ export const Indicator = styled.div`
   animation-name: ${scrollAnimation};
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
-  opacity: ${({$visibility}) => ($visibility === 'hide' ? 0 : 1)};
+  opacity: ${({ $visibility }) => ($visibility === "hide" ? 0 : 1)};
 
   @media only screen and (max-width: 500px) {
     right: 3rem;
@@ -86,20 +76,16 @@ export const Indicator = styled.div`
 
 export const StyledFixed = styled.div`
   position: fixed;
-  padding-right: 8rem;
+  padding: 8rem;
   transition: opacity 0.5s;
 
   @media only screen and (max-width: 1200px) {
-    padding-right: 3rem;
+    padding: 3rem;
   }
 
   @media only screen and (max-width: 500px) {
-    padding-right: 3rem;
+    padding: 3rem;
   }
-`;
-
-export const StyledRelative = styled.div`
-  position: relative;
 `;
 
 const RightPanel = ({
@@ -111,27 +97,19 @@ const RightPanel = ({
   return (
     <StyledPanel>
       <StyledFixed>
-        <StyledRelative>
-          <StyledLogo
-            src={Logo}
-            $color={`${mobileBottom && "white"}`}
-          />
-          <StyledH1 $visibility={`${mobileBottom && "hide"}`}>
-            {content.title}
-          </StyledH1>
-          <StyledP $visibility={`${mobileBottom && "hide"}`}>
-            {content.body}
-          </StyledP>
+        <StyledLogo src={Logo} $color={`${mobileBottom && "white"}`} />
+        <StyledH1 $visibility={`${mobileBottom && "hide"}`}>
+          {content.title}
+        </StyledH1>
+        <StyledP $visibility={`${mobileBottom && "hide"}`}>
+          {content.body}
+        </StyledP>
 
-          {imageNumber === 5 && (
-            <StyledButton
-              $formRelease
-              onClick={() => handleShowFormPanel(true)}
-            >
-              Care to have a chat?
-            </StyledButton>
-          )}
-        </StyledRelative>
+        {imageNumber === 5 && (
+          <StyledButton $formRelease onClick={() => handleShowFormPanel(true)}>
+            Care to have a chat?
+          </StyledButton>
+        )}
       </StyledFixed>
       {imageNumber === 5 ? null : (
         <Indicator $visibility={`${mobileBottom && "hide"}`}>
