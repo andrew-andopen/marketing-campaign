@@ -34,6 +34,10 @@ export const StyledH1 = styled.h1`
   opacity: ${({ $visibility }) => ($visibility === "hide" ? 0 : 1)};
   ${OpacityFade}
 
+  &.word-break {
+    word-break: break-word;
+  }
+
   @media only screen and (max-width: 1440px) {
     font-size: 3.2rem;
   }
