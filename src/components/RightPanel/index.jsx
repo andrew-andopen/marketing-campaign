@@ -115,7 +115,7 @@ const RightPanel = ({
 
         {imageNumber === 4 && (
           <StyledSubscript>
-            *Subject to timelines and availability.
+            *Gifts are subject to timelines and availability.
           </StyledSubscript>
         )}
 

@@ -116,7 +116,7 @@ const FormPanel = ({ data, handleShowFormPanel, state }) => {
       {submitForm && (
         <StyledContentWrapper $success>
           <StyledLogo src={Logo} />
-          <StyledH1 className="word-break">{`${data[7].title} ${firstName}`}</StyledH1>
+          <StyledH1 className="word-break">{`${data[7].title} ${firstName},`}</StyledH1>
           <StyledP>{data[7].body}</StyledP>
           <StyledLink href="https://andopen.co/" target="blank">
             Visit &Open

@@ -58,7 +58,7 @@ export const StyledField = styled.div`
   & .error {
     color: rgb(252, 58, 58);
     font-family: NittiLight;
-  } 
+  }
 
   & .label {
     font-family: NittiLight;
@@ -160,7 +160,7 @@ const Form = ({ handleFormSubmit, handleSetFirstName }) => {
               {...register("OptIn", { required: false })}
             />
             I agree to receive marketing communications from &Open every now and
-            then
+            then.
           </label>
         </StyledField>
 

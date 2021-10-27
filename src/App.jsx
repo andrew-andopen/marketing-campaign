@@ -54,7 +54,8 @@ const data = [
     ),
     body: (
       <div>
-        Something that lasts.{" "}
+        Something that lasts.
+        <br />
         <StyledPEmphasised>Something truly memorable.</StyledPEmphasised>
       </div>
     ),
@@ -91,7 +92,7 @@ const data = [
     body: (
       <div>
         <StyledPEmphasised>No more cheap merch.</StyledPEmphasised> Whether it’s
-        a sustainably-made object*, charitable donation or digital subscription,
+        a sustainably-made object, charitable donation or digital subscription,
         we ensure the best gifts are delivered to the right people.
       </div>
     ),
@@ -132,7 +133,7 @@ const data = [
   },
   {
     title: "Thanks",
-    body: "Take care and in the meantime visit our homepage to learn more about what we do.",
+    body: "Take care and in the meantime, visit our homepage to learn more about what we do.",
   },
   {
     title: "",
