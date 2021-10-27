@@ -36,6 +36,9 @@ export const StyledH1 = styled.h1`
 
   &.word-break {
     word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
   }
 
   @media only screen and (max-width: 1440px) {
