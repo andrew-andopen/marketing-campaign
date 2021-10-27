@@ -116,8 +116,17 @@ const data = [
     color: "#293831",
   },
   {
-    title: "Care to have a chat?",
-    body: "Whether you want to send a thoughtful digital gift from your brand to the world for the holidays, or discover meaningful gifting experiences for 2022, our gifting experts are here to help.",
+    title: "Care to learn more?",
+    body: (
+      <div>
+        Whether you want to send a thoughtful digital gift from your brand to
+        the world for the holidays, or discover meaningful gifting experiences
+        for 2022,{" "}
+        <StyledPEmphasised>
+          our gifting experts are here to help.
+        </StyledPEmphasised>
+      </div>
+    ),
     image: Image_6,
     color: "#293831",
   },
