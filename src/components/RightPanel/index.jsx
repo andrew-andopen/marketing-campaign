@@ -74,6 +74,14 @@ export const Indicator = styled.div`
   }
 `;
 
+export const StyledSubscript = styled(StyledSmallP)`
+  margin-top: 3rem;
+
+  @media only screen and (max-width: 500px) {
+    margin-top: 1.5rem;
+  }
+`;
+
 export const StyledFixed = styled.div`
   position: fixed;
   padding: 8rem;
@@ -105,9 +113,15 @@ const RightPanel = ({
           {content.body}
         </StyledP>
 
+        {imageNumber === 4 && (
+          <StyledSubscript>
+            *Subject to timelines and availability.
+          </StyledSubscript>
+        )}
+
         {imageNumber === 5 && (
           <StyledButton $formRelease onClick={() => handleShowFormPanel(true)}>
-            Care to have a chat?
+            Care to learn more?
           </StyledButton>
         )}
       </StyledFixed>

@@ -17,8 +17,7 @@ export const StyledPanel = styled.section`
 `;
 
 export const StyledImage = styled.img`
-
-  opacity: ${({$opacity}) => ($opacity === 'display' ? 1 : 0)};
+  opacity: ${({ $opacity }) => ($opacity === "display" ? 1 : 0)};
   width: 80%;
   transition: 0.2s linear;
   object-fit: contain;
@@ -26,7 +25,7 @@ export const StyledImage = styled.img`
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  z-index:-1;
+  z-index: -1;
 `;
 
 export const StyledMobileButton = styled(StyledButton)`
@@ -39,14 +38,13 @@ export const StyledMobileButton = styled(StyledButton)`
 
   @media only screen and (max-width: 768px) {
     display: block;
-    font-size:16px;
+    font-size: 16px;
     margin: 85vh auto;
     width: 80%;
     background: #faf7f3;
     color: #141414;
   }
 `;
-
 
 const LeftPanel = ({ data, imageNumber, content, handleShowFormPanel }) => (
   <StyledPanel content={content}>
@@ -56,12 +54,11 @@ const LeftPanel = ({ data, imageNumber, content, handleShowFormPanel }) => (
         key={index}
         src={image.image}
         $opacity={imageNumber === index ? "display" : "hide"}
-         
       />
     ))}
 
     <StyledMobileButton onClick={() => handleShowFormPanel(true)}>
-      Care to have a chat?
+      Care to learn more?
     </StyledMobileButton>
   </StyledPanel>
 );

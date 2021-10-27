@@ -64,7 +64,6 @@ export const StyledP = styled.p`
 export const StyledSmallP = styled.p`
   font-family: NittiLight;
   font-size: 16px;
-  text-align: center;
 `;
 
 export const StyledPEmphasised = styled.span`
