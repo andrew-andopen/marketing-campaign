@@ -45,13 +45,7 @@ const data = [
     color: "#4e7565",
   },
   {
-    title: (
-      <div>
-        So let us help
-        <br /> you give them
-        <br /> something great
-      </div>
-    ),
+    title: <div>So let us help you give them something great</div>,
     body: (
       <div>
         Something that lasts.
@@ -80,8 +74,8 @@ const data = [
     body: (
       <div>
         Near or far, 100 or 10,000, our intelligent shipping logistics and{" "}
-        <StyledPEmphasised>powerful SaaS platform</StyledPEmphasised> ships
-        gifts anywhere in the world — fast.
+        <StyledPEmphasised>powerful platform</StyledPEmphasised> ships gifts
+        anywhere in the world — fast.
       </div>
     ),
     image: Image_4,
@@ -93,20 +87,14 @@ const data = [
       <div>
         <StyledPEmphasised>No more cheap merch.</StyledPEmphasised> Whether it’s
         a sustainably-made object, charitable donation or digital subscription,
-        we ensure the best gifts are delivered to the right people.
+        we ensure the best gifts are delivered to the right people.*
       </div>
     ),
     image: Image_5,
     color: "#32433a",
   },
   {
-    title: (
-      <div>
-        Introduce the
-        <br /> human touch back
-        <br /> into mass gifting
-      </div>
-    ),
+    title: <div>Introduce the human touch back into mass gifting</div>,
     body: (
       <div>
         And you’re left with loyal brand advocates{" "}

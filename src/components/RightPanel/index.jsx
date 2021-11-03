@@ -65,12 +65,13 @@ export const Indicator = styled.div`
   bottom: 100px;
   right: 100px;
   animation-name: ${scrollAnimation};
-  animation-duration: 0.8s;
+  animation-duration: 1.2s;
   animation-iteration-count: infinite;
   opacity: ${({ $visibility }) => ($visibility === "hide" ? 0 : 1)};
 
   @media only screen and (max-width: 500px) {
     right: 3rem;
+    bottom: 3rem;
   }
 `;
 

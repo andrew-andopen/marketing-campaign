@@ -107,7 +107,7 @@ const Form = ({ handleFormSubmit, handleSetFirstName }) => {
             />
             {/* <StyledLabel htmlfor="Firstname">First name</StyledLabel> */}
             <div className="error">
-              {errors.Firstname && "First name name is required"}
+              {errors.Firstname && "First name is required"}
             </div>
           </StyledField>
 
@@ -120,7 +120,7 @@ const Form = ({ handleFormSubmit, handleSetFirstName }) => {
             />
             {/* <StyledLabel htmlfor="Lastname">Last name</StyledLabel> */}
             <div className="error">
-              {errors.Lastname && "Last name name is required"}
+              {errors.Lastname && "Last name is required"}
             </div>
           </StyledField>
         </StyledFlex>
@@ -133,9 +133,7 @@ const Form = ({ handleFormSubmit, handleSetFirstName }) => {
             {...register("Email", { required: true })}
           />
           {/* <StyledLabel htmlfor="Email">Work email address</StyledLabel> */}
-          <div className="error">
-            {errors.Email && "Email name is required"}
-          </div>
+          <div className="error">{errors.Email && "Email is required"}</div>
         </StyledField>
 
         <StyledField>
@@ -147,7 +145,7 @@ const Form = ({ handleFormSubmit, handleSetFirstName }) => {
           />
           {/* <StyledLabel htmlfor="CompanyName">Comany name</StyledLabel> */}
           <div className="error">
-            {errors.CompanyName && "Company name name is required"}
+            {errors.CompanyName && "Company name is required"}
           </div>
         </StyledField>
 
