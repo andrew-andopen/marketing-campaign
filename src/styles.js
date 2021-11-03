@@ -51,7 +51,7 @@ export const StyledH1 = styled.h1`
   }
 
   @media only screen and (max-width: 500px) {
-    font-size: ${({ $form }) => ($form ? "24px" : "40px")};
+    font-size: ${({ $form }) => ($form ? "24px" : "46px")};
   }
 `;
 
@@ -63,7 +63,7 @@ export const StyledP = styled.p`
   ${OpacityFade}
 
   @media only screen and (max-width: 500px) {
-    font-size: 16px;
+    font-size: 18.4px;
     line-height: 24px;
   }
 `;
