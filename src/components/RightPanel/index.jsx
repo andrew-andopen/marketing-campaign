@@ -150,7 +150,7 @@ const RightPanel = ({
         </StyledP>
 
         <StyledButton $formRelease onClick={() => handleShowFormPanel(true)}>
-          Care to learn more?
+        Get in touch
         </StyledButton>
 
         {/* {imageNumber === 4 && (
