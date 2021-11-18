@@ -19,6 +19,8 @@ export const StyledFormPanel = styled(StyledPanel)`
   margin-left: 50vw;
   padding: 2rem;
   z-index: 10;
+
+  margin-top: 0;
   -webkit-transition: right 1000ms;
 
   -webkit-transition: right 1000ms;
@@ -27,7 +29,6 @@ export const StyledFormPanel = styled(StyledPanel)`
 
   @media only screen and (max-width: 700px) {
     min-width: 100vw;
-    margin-top: 0;
   }
 `;
 
@@ -58,14 +59,14 @@ export const StyledCloseButton = styled.div`
 `;
 
 export const StyledContentWrapper = styled.div`
-  padding: ${({ $success }) => ($success ? "12rem 8rem" : "6rem 8rem")};
+  padding: ${({ $success }) => ($success ? "8rem 8rem" : "6rem 8rem")};
 
   @media only screen and (max-width: 1440px) {
-    padding: ${({ $success }) => ($success ? "8rem 4rem" : "6rem 4rem")};
+    padding: ${({ $success }) => ($success ? "4rem 4rem" : "6rem 4rem")};
   }
 
   @media only screen and (max-width: 1200px) {
-    padding: ${({ $success }) => ($success ? "8rem 4rem" : "3rem 2rem")};
+    padding: ${({ $success }) => ($success ? "4rem" : "3rem 2rem")};
   }
 
   @media only screen and (max-width: 500px) {
