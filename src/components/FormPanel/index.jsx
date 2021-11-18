@@ -70,7 +70,7 @@ export const StyledContentWrapper = styled.div`
   }
 
   @media only screen and (max-width: 500px) {
-    padding: ${({ $success }) => $success && "0rem"};
+    padding: 2rem 0;
   }
 `;
 
