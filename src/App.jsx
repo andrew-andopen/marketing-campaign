@@ -46,8 +46,8 @@ const data = [
         <br />
         <br />
         <StyledPEmphasised>
-          We make business gifting at scale simple and especially thoughtful,
-          for companies that care.
+          We make global gifting simple and especially thoughtful for companies
+          that care.
         </StyledPEmphasised>
       </div>
     ),

@@ -163,7 +163,7 @@ const Form = ({ handleFormSubmit, handleSetFirstName }) => {
         </StyledField>
 
         <StyledButton $submit typs="submit">
-          Submit
+          Sign up
         </StyledButton>
       </form>
     </StyledFormContainer>
