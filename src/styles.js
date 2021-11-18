@@ -69,6 +69,11 @@ export const StyledP = styled.p`
   ${OpacityFade}
 
   @media only screen and (max-width: 1440px) {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  @media only screen and (max-width: 500px) {
     font-size: 16px;
     line-height: 24px;
   }

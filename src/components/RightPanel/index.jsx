@@ -37,6 +37,7 @@ export const StyledLogo = styled.img`
   ${OpacityFade}
 
   @media only screen and (max-width: 1440px) {
+    max-width: 100px;
     margin-bottom: 3rem;
   }
 
@@ -113,6 +114,10 @@ export const StyledFixed = styled.div`
   position: relative;
   padding: 8rem;
   transition: opacity 0.5s;
+
+  @media only screen and (max-width: 1440px) {
+    padding: 5rem;
+  }
 
   @media only screen and (max-width: 1200px) {
     padding: 3rem;
