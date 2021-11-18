@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Transition } from "react-transition-group";
+import styled from "styled-components";
 
 import "./base.css";
 import "./styles.js";
@@ -10,6 +11,7 @@ import {
   GlobalStyle,
   Overflow,
   StyledPEmphasised,
+  OpacityFade,
 } from "./styles";
 
 import LeftPanel from "./components/LeftPanel";
@@ -23,26 +25,34 @@ import Image_4 from "../src/images/image_4.png";
 import Image_5 from "../src/images/image_5.png";
 import Image_6 from "../src/images/image_6.png";
 
+import Logo from "../src/images/ao_logo.svg";
+
 const data = [
   {
     title: (
       <div>
         &Open up
-        <br /> better gifting TEST
+        <br /> better gifting
       </div>
     ),
     body: (
       <div>
-        A tale as old as time, the holiday season calls upon gifting to{" "}
-        <StyledPEmphasised>deliver feelings of connectedness</StyledPEmphasised>
-        , sincere appreciation and care.
+        The holiday season calls upon gifting to deliver feelings of
+        connectedness, sincere appreciation, and care.
         <br />
-        <br /> And yet in a corporate setting, this can feel especially
-        underwhelming...
+        <br />
+        Let us help you give something great. Something that lasts. Something
+        truly memorable.
+        <br />
+        <br />
+        <StyledPEmphasised>
+          We make business gifting at scale simple and especially thoughtful,
+          for companies that care.
+        </StyledPEmphasised>
       </div>
     ),
-    image: Image_1,
-    color: "#4e7565",
+    image: Image_6,
+    color: "#293831",
   },
   {
     title: <div>So let us help you give them something great</div>,
@@ -131,59 +141,114 @@ const data = [
   },
 ];
 
+export const StyledLogo = styled.img`
+  filter: ${({ $intersection }) =>
+    $intersection === "white" && "invert(1) brightness(2)"};
+  ${OpacityFade}
+  max-width: 140px;
+  position: fixed;
+  top: 3rem;
+  left: 3rem;
+  z-index: 9;
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 3rem;
+    display: block;
+  }
+
+  @media only screen and (max-width: 500px) {
+    max-width: 80px;
+  }
+`;
+
 export default function App() {
   const [content, setContent] = useState(data[0]);
   const [imageNumber, setImageNumber] = useState(0);
   const [formPanel, setFormPanel] = useState(false);
   const [mobileBottom, setMobileBottom] = useState(false);
+  const [intersection, setIntersection] = useState(false);
 
   const handleShowFormPanel = (visibility) => {
     setFormPanel(visibility);
   };
 
-  const changeContent = (number) => {
-    setContent(data[number]);
-    setImageNumber(number);
-  };
+  // const changeContent = (number) => {
+  //   setContent(data[number]);
+  //   setImageNumber(number);
+  // };
 
   const BodyTag = useRef();
+  const RightPanelTag = useRef();
+  const LogoTag = useRef();
 
   useEffect(() => {
+    // const scrollListener = () => {
+    //   const windowHeight = window.innerHeight;
+    //   const windowWidth = window.innerWidth;
+
+    //   const pixels = window.pageYOffset;
+    //   const pageHeight = BodyTag.current.getBoundingClientRect().height;
+
+    //   const totalScrollableDistance = pageHeight - windowHeight;
+    //   const percentage = pixels / totalScrollableDistance;
+
+    //   if (windowWidth > 768) {
+    //     setMobileBottom(false);
+    //     percentage === 0 && changeContent(0);
+    //     percentage > 0.2 && changeContent(1);
+    //     percentage > 0.4 && changeContent(2);
+    //     percentage > 0.6 && changeContent(3);
+    //     percentage > 0.8 && changeContent(4);
+    //     pixels >= pageHeight - windowHeight && changeContent(5);
+    //   } else {
+    //     percentage === 0 && changeContent(0);
+    //     percentage > 0.14 && changeContent(1);
+    //     percentage > 0.28 && changeContent(2);
+    //     percentage > 0.42 && changeContent(3);
+    //     percentage > 0.56 && changeContent(4);
+    //     percentage > 0.7 && changeContent(5);
+    //     percentage > 0.84 ? setMobileBottom(true) : setMobileBottom(false);
+    //   }
+    // };
+
+    // const scrollListener = () => {
+    //   const windowHeight = window.innerHeight;
+    //   const windowWidth = window.innerWidth;
+
+    //   const pixels = window.pageYOffset;
+    //   const pageHeight = BodyTag.current.getBoundingClientRect().height;
+
+    //   const totalScrollableDistance = pageHeight - windowHeight;
+    //   const percentage = pixels / totalScrollableDistance;
+
+    //   if (windowWidth > 768) {
+    //     setMobileBottom(false);
+    //   } else {
+    //     percentage > 0.84 ? setMobileBottom(true) : setMobileBottom(false);
+    //   }
+    // };
+
     const scrollListener = () => {
       const windowHeight = window.innerHeight;
-      const windowWidth = window.innerWidth;
+      const windowTop = window.pageYOffset;
+      const LogoBottom = LogoTag.current.getBoundingClientRect().bottom;
 
-      const pixels = window.pageYOffset;
-      const pageHeight = BodyTag.current.getBoundingClientRect().height;
+      const intersectionPoint = windowHeight - LogoBottom;
 
-      const totalScrollableDistance = pageHeight - windowHeight;
-      const percentage = pixels / totalScrollableDistance;
-
-      if (windowWidth > 768) {
-        setMobileBottom(false);
-        percentage === 0 && changeContent(0);
-        percentage > 0.2 && changeContent(1);
-        percentage > 0.4 && changeContent(2);
-        percentage > 0.6 && changeContent(3);
-        percentage > 0.8 && changeContent(4);
-        pixels >= pageHeight - windowHeight && changeContent(5);
-      } else {
-        percentage === 0 && changeContent(0);
-        percentage > 0.14 && changeContent(1);
-        percentage > 0.28 && changeContent(2);
-        percentage > 0.42 && changeContent(3);
-        percentage > 0.56 && changeContent(4);
-        percentage > 0.7 && changeContent(5);
-        percentage > 0.84 ? setMobileBottom(true) : setMobileBottom(false);
-      }
+      windowTop >= intersectionPoint
+        ? setIntersection(true)
+        : setIntersection(false);
     };
+
+    window.addEventListener("scroll", scrollListener);
 
     const resizeListener = () => {
       window.innerWidth > 768 && setMobileBottom(false);
     };
 
     window.addEventListener("resize", resizeListener);
-    window.addEventListener("scroll", scrollListener);
+    // window.addEventListener("scroll", scrollListener);
 
     return () => {
       window.removeEventListener("resize", resizeListener);
@@ -195,12 +260,18 @@ export default function App() {
     <Overflow ref={BodyTag}>
       <GlobalFonts />
       <GlobalStyle />
+      <StyledLogo
+        src={Logo}
+        $intersection={`${intersection && "white"}`}
+        ref={LogoTag}
+      />
       <AppContainer>
         <LeftPanel
           data={data}
           imageNumber={imageNumber}
           content={content}
           handleShowFormPanel={handleShowFormPanel}
+          mobileBottom={mobileBottom}
         />
         <Transition in={formPanel} timeout={300}>
           {(state) => (
@@ -211,12 +282,14 @@ export default function App() {
             />
           )}
         </Transition>
-        <RightPanel
-          content={content}
-          imageNumber={imageNumber}
-          handleShowFormPanel={handleShowFormPanel}
-          mobileBottom={mobileBottom}
-        />
+        <div ref={RightPanelTag}>
+          <RightPanel
+            content={content}
+            imageNumber={imageNumber}
+            handleShowFormPanel={handleShowFormPanel}
+            mobileBottom={mobileBottom}
+          />
+        </div>
       </AppContainer>
     </Overflow>
   );

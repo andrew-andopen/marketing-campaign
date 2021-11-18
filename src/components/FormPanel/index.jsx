@@ -27,6 +27,7 @@ export const StyledFormPanel = styled(StyledPanel)`
 
   @media only screen and (max-width: 700px) {
     min-width: 100vw;
+    margin-top: 0;
   }
 `;
 

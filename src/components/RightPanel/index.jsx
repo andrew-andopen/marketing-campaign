@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import Logo from "../../images/ao_logo.svg";
 import Arrow from "../../images/dropdown_arrow.png";
@@ -16,24 +16,30 @@ import {
 export const StyledPanel = styled.section`
   width: 50vw;
   margin-left: 50vw;
-  height: 250vh;
+  height: 100vh;
   background: #faf7f3;
   position: relative;
 
   @media only screen and (max-width: 768px) {
     margin-left: 0;
     width: 100vw;
-    height: 300vh;
+    height: 100vh;
+    margin-top: 100vh;
   }
 `;
 
 export const StyledLogo = styled.img`
-  filter: ${({ $color }) => $color === "white" && "invert(1) brightness(2)"};
+  filter: invert(1) brightness(2);
 
   max-width: 140px;
   margin-bottom: 5rem;
 
   ${OpacityFade}
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 3rem;
+    visibility: hidden;
+  }
 
   @media only screen and (max-width: 500px) {
     max-width: 80px;
@@ -44,36 +50,53 @@ export const StyledArrow = styled.img`
   width: 24px;
 `;
 
-const scrollAnimation = keyframes`
-  0% {
-      transform: translate(0, 0)
-  }
+// const scrollAnimation = keyframes`
+//   0% {
+//       transform: translate(0, 0)
+//   }
 
-  50% {
-      transform: translate(0, 40%)
-  }
-  100% {
-      transform: translate(0, 0)
-  }
-`;
+//   50% {
+//       transform: translate(0, 40%)
+//   }
+//   100% {
+//       transform: translate(0, 0)
+//   }
+// `;
 
-export const Indicator = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
+/* export const IndicatorContainer = styled.div`
+  position: relative;
   bottom: 100px;
   right: 100px;
+  display: flex;
+  justify-content: flex-end;
   animation-name: ${scrollAnimation};
   animation-duration: 1.2s;
   animation-iteration-count: infinite;
   opacity: ${({ $visibility }) => ($visibility === "hide" ? 0 : 1)};
 
+  display: none;
+
   @media only screen and (max-width: 500px) {
     right: 3rem;
     bottom: 3rem;
   }
-`;
+`; */
+
+/* export const Indicator = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  bottom: 100px;
+  right: 100px; 
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  opacity: ${({ $visibility }) => ($visibility === "hide" ? 0 : 1)};
+  @media only screen and (max-width: 500px) {
+    right: 3rem;
+    bottom: 3rem;
+  }
+`; */
 
 export const StyledSubscript = styled(StyledSmallP)`
   margin-top: 3rem;
@@ -84,12 +107,16 @@ export const StyledSubscript = styled(StyledSmallP)`
 `;
 
 export const StyledFixed = styled.div`
-  position: fixed;
+  position: relative;
   padding: 8rem;
   transition: opacity 0.5s;
 
   @media only screen and (max-width: 1200px) {
     padding: 3rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    position: relative;
   }
 
   @media only screen and (max-width: 500px) {
@@ -114,7 +141,11 @@ const RightPanel = ({
           {content.body}
         </StyledP>
 
-        {imageNumber === 4 && (
+        <StyledButton $formRelease onClick={() => handleShowFormPanel(true)}>
+          Care to learn more?
+        </StyledButton>
+
+        {/* {imageNumber === 4 && (
           <StyledSubscript>
             *Gifts are subject to timelines and availability.
           </StyledSubscript>
@@ -124,14 +155,16 @@ const RightPanel = ({
           <StyledButton $formRelease onClick={() => handleShowFormPanel(true)}>
             Care to learn more?
           </StyledButton>
-        )}
+        )} */}
       </StyledFixed>
-      {imageNumber === 5 ? null : (
-        <Indicator $visibility={`${mobileBottom && "hide"}`}>
-          <StyledSmallP>Scroll to read</StyledSmallP>
-          <StyledArrow src={Arrow} />
-        </Indicator>
-      )}
+      {/* {imageNumber === 5 ? null : (
+        <IndicatorContainer>
+          <Indicator $visibility={`${mobileBottom && "hide"}`}>
+            <StyledSmallP>Scroll to read</StyledSmallP>
+            <StyledArrow src={Arrow} />
+          </Indicator>
+        </IndicatorContainer>
+      )} */}
     </StyledPanel>
   );
 };
