@@ -38,7 +38,7 @@ export const StyledLogo = styled.img`
 
   @media only screen and (max-width: 768px) {
     margin-bottom: 3rem;
-    visibility: hidden;
+    visibility: ${({ $success }) => ($success ? "visiible" : "hidden")};
   }
 
   @media only screen and (max-width: 500px) {

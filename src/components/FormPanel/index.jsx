@@ -70,7 +70,7 @@ export const StyledContentWrapper = styled.div`
   }
 
   @media only screen and (max-width: 500px) {
-    padding: ${({ $success }) => ($success ? "2rem 2rem" : "0rem 0rem")};
+    padding: ${({ $success }) => $success && "0rem"};
   }
 `;
 
@@ -117,7 +117,7 @@ const FormPanel = ({ data, handleShowFormPanel, state }) => {
 
       {submitForm && (
         <StyledContentWrapper $success>
-          <StyledLogo src={Logo} />
+          <StyledLogo src={Logo} $success />
           <StyledH1 className="word-break">{`${data[7].title}, ${firstName}`}</StyledH1>
           <StyledP>{data[7].body}</StyledP>
           <StyledLink href="https://andopen.co/" target="blank">
