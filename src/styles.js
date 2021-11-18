@@ -68,7 +68,7 @@ export const StyledP = styled.p`
   /* opacity: ${({ $visibility }) => ($visibility === "hide" ? 0 : 1)}; */
   ${OpacityFade}
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 1440px) {
     font-size: 16px;
     line-height: 24px;
   }

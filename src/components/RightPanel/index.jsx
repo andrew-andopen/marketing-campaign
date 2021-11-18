@@ -36,8 +36,11 @@ export const StyledLogo = styled.img`
 
   ${OpacityFade}
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1440px) {
     margin-bottom: 3rem;
+  }
+
+  @media only screen and (max-width: 768px) {
     visibility: ${({ $success }) => ($success ? "visiible" : "hidden")};
   }
 
