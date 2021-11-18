@@ -116,7 +116,7 @@ export const StyledFixed = styled.div`
   transition: opacity 0.5s;
 
   @media only screen and (max-width: 1440px) {
-    padding: 5rem;
+    padding: 6rem;
   }
 
   @media only screen and (max-width: 1200px) {

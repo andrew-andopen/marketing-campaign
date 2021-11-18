@@ -62,7 +62,7 @@ export const StyledContentWrapper = styled.div`
   padding: ${({ $success }) => ($success ? "8rem 8rem" : "6rem 8rem")};
 
   @media only screen and (max-width: 1440px) {
-    padding: ${({ $success }) => ($success ? "4rem 4rem" : "6rem 4rem")};
+    padding: ${({ $success }) => ($success ? "4rem 4rem" : "4rem 4rem")};
   }
 
   @media only screen and (max-width: 1200px) {
