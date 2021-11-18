@@ -119,10 +119,9 @@ const data = [
     body: (
       <div>
         Whether you want to send a thoughtful digital gift from your brand to
-        the world for the holidays, or discover meaningful gifting experiences
-        for 2022,{" "}
+        the world or discover meaningful gifting experiences for 2022,{" "}
         <StyledPEmphasised>
-          our gifting experts are here to help.
+          our holiday gifting experts are here to help.
         </StyledPEmphasised>
       </div>
     ),
@@ -131,7 +130,16 @@ const data = [
   },
   {
     title: "Thanks",
-    body: "Take care and in the meantime, visit our homepage to learn more about what we do.",
+    body: (
+      <div>
+        Introduce the human touch back into mass gifting and you’re left with
+        loyal brand advocates{" "}
+        <StyledPEmphasised>(and very happy people).</StyledPEmphasised>
+        <br />
+        <br />
+        Visit our homepage to learn more about what we do.
+      </div>
+    ),
   },
   {
     title: "",
